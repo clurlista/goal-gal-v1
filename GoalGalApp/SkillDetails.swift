@@ -10,11 +10,11 @@ struct SkillDetails: Identifiable, Codable, Hashable {
     let name: String
     let image: String
     var description: String
-    var mastered: Bool
+    var criteria: [SkillCriteria]
+      
+    var mastered: Bool 
     
-    var id: UUID {
-        return UUID()
-    }
+    var id: String { name }
     
     static func == (lhs: SkillDetails, rhs: SkillDetails) -> Bool {
         lhs.name == rhs.name

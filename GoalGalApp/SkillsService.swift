@@ -26,8 +26,9 @@ class SkillsService: ObservableObject {
     
     func updateMastered(name: String, value: Bool) {
         if let index = skills.firstIndex(where: { $0.name == name }) {
-            skills[index].mastered = value
-            print("Updated skill mastery for \(name)")
+            var skill = skills[index]
+            skill.mastered = value
+            skills[index] = skill
         } else {
             print("Skill not found.")
         }

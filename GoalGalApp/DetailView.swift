@@ -7,15 +7,8 @@
 import SwiftUI
 
 struct DetailView: View {
-    var skill: SkillDetails
-    @State private var isMastered: Bool
+    @Binding var skill: SkillDetails
     @ObservedObject var viewModel: SkillsViewModel
-    
-    init(skill: SkillDetails, viewModel: SkillsViewModel) {
-        self.skill = skill
-        self.viewModel = viewModel
-        _isMastered = State(initialValue: skill.mastered)
-    }
     
     var body: some View {
         VStack {
@@ -23,16 +16,16 @@ struct DetailView: View {
             Text(skill.name)
                 .font(.custom("Digital Arcade Regular", size: 24))
                 .foregroundColor(.purple)
-                .padding(.top, 40) // Adjust this for safe area
+                .padding(.top, 40) 
             
             Spacer().frame(height: 50)
     
             VStack(spacing: 20) {
                 Button(action: {
-                    isMastered.toggle()
-                    viewModel.updateSkill(for: skill, mastered: isMastered)
+                    skill.mastered.toggle()
+                    viewModel.updateSkill(for: skill, mastered: skill.mastered)
                 }) {
-                    Text(isMastered ? "💪" : "💪🏻")
+                    Text(skill.mastered ? "💪" : "💪🏻")
                         .font(.largeTitle)
                 }
                 .buttonStyle(PlainButtonStyle())
@@ -60,12 +53,25 @@ struct DetailView: View {
                         RoundedRectangle(cornerRadius: 8.0)
                             .stroke(Color.black, lineWidth: 2)
                     )
-                    .padding(.horizontal)
+                
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Checklist")
+                        .font(.headline)
+                    
+                    ForEach($skill.criteria) { $item in
+                        Toggle(isOn: $item.isCompleted) {
+                            Text(item.description)
+                                .font(.subheadline)
+                        }
+                    }
+                }
+                .padding()
+                .background(Color(.secondarySystemBackground))
+                .cornerRadius(10)
+                
+                .padding(.horizontal)
             }
         }
         .padding()
-        .onAppear {
-            isMastered = skill.mastered
-        }
     }
 }

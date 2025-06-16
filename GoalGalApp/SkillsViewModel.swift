@@ -12,10 +12,20 @@ class SkillsViewModel: ObservableObject {
     @Published var skills: [SkillDetails] = []
     @Published var masteredSkills: [SkillDetails] = []
     
+    private var cancellables = Set<AnyCancellable>()
+    
     init(service: SkillsService = SkillsService()) {
         self.service = service
-        fetchSkills()
-        getMasteredSkills()
+        
+        service.$skills
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] skills in
+                self?.skills = skills
+                self?.updateMasteredSkills()
+            }
+            .store(in: &cancellables)
+        
+        service.fetchSkills()
     }
     
     func fetchSkills() {
@@ -25,13 +35,11 @@ class SkillsViewModel: ObservableObject {
     
     func updateSkill(for skill: SkillDetails, mastered: Bool) {
         service.updateMastered(name: skill.name, value: mastered)
-        fetchSkills()
     }
     
-    func getMasteredSkills() {
-        let filteredSkills = skills.filter { $0.mastered }
-        self.masteredSkills = filteredSkills
-        }
+    private func updateMasteredSkills() {
+        masteredSkills = skills.filter { $0.mastered }
+    }
 }
 
 

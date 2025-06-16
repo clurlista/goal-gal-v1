@@ -13,9 +13,9 @@ struct SkillsView: View {
         NavigationView {
         ScrollView {
             VStack(spacing: 10) {
-                ForEach(viewModel.skills, id: \.self) { skill in
+                ForEach($viewModel.skills) { $skill in
                     NavigationLink {
-                        DetailView(skill: skill, viewModel: viewModel)
+                        DetailView(skill: $skill, viewModel: viewModel)
                     } label: {
                         SkillSummaryView(skill: skill, viewModel: viewModel)
                     }
