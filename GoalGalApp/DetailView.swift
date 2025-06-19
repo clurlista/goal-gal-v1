@@ -7,47 +7,37 @@
 import SwiftUI
 
 struct DetailView: View {
-    var skill: SkillDetails
-    @State private var isMastered: Bool
-    @ObservedObject var viewModel: SkillsViewModel
-    
-    init(skill: SkillDetails, viewModel: SkillsViewModel) {
-        self.skill = skill
-        self.viewModel = viewModel
-        _isMastered = State(initialValue: skill.mastered)
-    }
-    
+    @ObservedObject var viewModel: SkillDetailViewModel
+
     var body: some View {
         VStack {
-         
-            Text(skill.name)
+            Text(viewModel.title)
                 .font(.custom("Digital Arcade Regular", size: 24))
                 .foregroundColor(.purple)
-                .padding(.top, 40) // Adjust this for safe area
-            
+                .padding(.top, 40)
+
             Spacer().frame(height: 50)
-    
+
             VStack(spacing: 20) {
                 Button(action: {
-                    isMastered.toggle()
-                    viewModel.updateSkill(for: skill, mastered: isMastered)
+                    // Toggle mastery logic if needed
                 }) {
-                    Text(isMastered ? "💪" : "💪🏻")
+                    Text(viewModel.isMastered ? "💪" : "💪🏻")
                         .font(.largeTitle)
                 }
                 .buttonStyle(PlainButtonStyle())
-                
+
                 Spacer().frame(height: 50)
-                
-                Image(skill.image)
+
+                Image(viewModel.skill.image)
                     .resizable()
                     .scaledToFit()
                     .frame(height: 200)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .shadow(radius: 5)
                     .padding()
-                
-                Text(skill.description)
+
+                Text(viewModel.skill.description)
                     .font(.system(.body, design: .monospaced))
                     .foregroundColor(.white)
                     .font(.system(size: 20, weight: .bold))
@@ -64,8 +54,5 @@ struct DetailView: View {
             }
         }
         .padding()
-        .onAppear {
-            isMastered = skill.mastered
-        }
     }
 }

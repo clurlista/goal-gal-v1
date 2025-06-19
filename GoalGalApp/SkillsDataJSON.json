@@ -1,86 +1,282 @@
 [
-    {
-      "name": "Bicycle Kick",
-      "image": "bicycle_kick.png",
-      "description": "A kick where a player jumps into the air and kicks the ball backward over their head.",
-      "mastered": true
-    },
-    {
-      "name": "Chip",
-      "image": "chip.png",
-      "description": "A short, lofted pass or shot executed by a quick and light kicking motion.",
-      "mastered": false
-    },
-    {
-      "name": "Corner Kick",
-      "image": "corner_kick.png",
-      "description": "A method of restarting play in a game of football.",
-      "mastered": true
-    },
-    {
-      "name": "Curl",
-      "image": "curl.png",
-      "description": "A kick that puts a spin on the ball, causing it to curve in the air.",
-      "mastered": true
-    },
-    {
-      "name": "Dribbling",
-      "image": "dribbling",
-      "description": "The skill of controlling the ball while running.",
-      "mastered": true
-    },
-    {
-      "name": "Free Kick",
-      "image": "free_kick.png",
-      "description": "A kick awarded to a team following a foul or other infringement by the opposition.",
-      "mastered": false
-    },
-    {
-      "name": "Header",
-      "image": "header",
-      "description": "The technique of hitting the ball with your head.",
-      "mastered": true
-    },
-    {
-      "name": "Keepie Uppie",
-      "image": "keepie_uppie.png",
-      "description": "A skill where a player tries to keep the ball in the air as long as possible.",
-      "mastered": false
-    },
-    {
-      "name": "Long Pass",
-      "image": "long_pass.png",
-      "description": "A long-range pass to a teammate.",
-      "mastered": true
-    },
-    {
-      "name": "Nutmeg",
-      "image": "nutmeg.png",
-      "description": "A technique where a player plays the ball through an opponent's legs.",
-      "mastered": false
-    },
-    {
-      "name": "Penalty Kick",
-      "image": "penaltykick",
-      "description": "A type of direct free kick taken from the penalty mark.",
-      "mastered": true
-    },
-    {
-      "name": "Rainbow Kick",
-      "image": "rainbow_kick.png",
-      "description": "A trick where the ball is flicked up and over the player's head and the opponent.",
-      "mastered": false
-    },
-    {
-      "name": "Shooting",
-      "image": "shooting.png",
-      "description": "The act of kicking the ball towards the goal in an attempt to score.",
-      "mastered": true
-    },
-    {
-      "name": "Tackle",
-      "image": "tackle",
-      "description": "A skill used to take the ball away from an opponent.",
-      "mastered": true
-    }
-  ]
+  {
+    "name": "Bicycle Kick",
+    "image": "bicycle_kick.png",
+    "description": "A kick where a player jumps into the air and kicks the ball backward over their head.",
+    "mastered": true,
+    "criteria": [
+      {
+        "description": "Jump properly",
+        "progress": 0
+      },
+      {
+        "description": "Kick the ball backward",
+        "progress": 0
+      },
+      {
+        "description": "Land safely",
+        "progress": 0
+      }
+    ]
+  },
+  {
+    "name": "Chip",
+    "image": "chip.png",
+    "description": "A short, lofted pass or shot executed by a quick and light kicking motion.",
+    "mastered": false,
+    "criteria": [
+      {
+        "description": "Approach the ball lightly",
+        "progress": 0
+      },
+      {
+        "description": "Lift the ball over the goalkeeper",
+        "progress": 0
+      },
+      {
+        "description": "Maintain balance",
+        "progress": 0
+      }
+    ]
+  },
+  {
+    "name": "Corner Kick",
+    "image": "corner_kick.png",
+    "description": "A method of restarting play in a game of football.",
+    "mastered": true,
+    "criteria": [
+      {
+        "description": "Place the ball correctly",
+        "progress": 0
+      },
+      {
+        "description": "Aim for teammates",
+        "progress": 0
+      },
+      {
+        "description": "Deliver with accuracy",
+        "progress": 0
+      }
+    ]
+  },
+  {
+    "name": "Curl",
+    "image": "curl.png",
+    "description": "A kick that puts a spin on the ball, causing it to curve in the air.",
+    "mastered": true,
+    "criteria": [
+      {
+        "description": "Strike the ball off-center",
+        "progress": 0
+      },
+      {
+        "description": "Apply side spin",
+        "progress": 0
+      },
+      {
+        "description": "Aim the curve",
+        "progress": 0
+      }
+    ]
+  },
+  {
+    "name": "Dribbling",
+    "image": "dribbling",
+    "description": "The skill of controlling the ball while running.",
+    "mastered": true,
+    "criteria": [
+      {
+        "description": "Keep close control",
+        "progress": 0
+      },
+      {
+        "description": "Change direction quickly",
+        "progress": 0
+      },
+      {
+        "description": "Protect the ball from opponents",
+        "progress": 0
+      }
+    ]
+  },
+  {
+    "name": "Free Kick",
+    "image": "free_kick.png",
+    "description": "A kick awarded to a team following a foul or other infringement by the opposition.",
+    "mastered": false,
+    "criteria": [
+      {
+        "description": "Position the ball correctly",
+        "progress": 0
+      },
+      {
+        "description": "Visualize target",
+        "progress": 0
+      },
+      {
+        "description": "Strike with power and accuracy",
+        "progress": 0
+      }
+    ]
+  },
+  {
+    "name": "Header",
+    "image": "header",
+    "description": "The technique of hitting the ball with your head.",
+    "mastered": true,
+    "criteria": [
+      {
+        "description": "Keep eyes on the ball",
+        "progress": 0
+      },
+      {
+        "description": "Use forehead to strike",
+        "progress": 0
+      },
+      {
+        "description": "Generate power with neck muscles",
+        "progress": 0
+      }
+    ]
+  },
+  {
+    "name": "Keepie Uppie",
+    "image": "keepie_uppie.png",
+    "description": "A skill where a player tries to keep the ball in the air as long as possible.",
+    "mastered": false,
+    "criteria": [
+      {
+        "description": "Use feet to juggle",
+        "progress": 0
+      },
+      {
+        "description": "Control ball height",
+        "progress": 0
+      },
+      {
+        "description": "Maintain focus",
+        "progress": 0
+      }
+    ]
+  },
+  {
+    "name": "Long Pass",
+    "image": "long_pass.png",
+    "description": "A long-range pass to a teammate.",
+    "mastered": true,
+    "criteria": [
+      {
+        "description": "Look for teammate position",
+        "progress": 0
+      },
+      {
+        "description": "Use correct foot technique",
+        "progress": 0
+      },
+      {
+        "description": "Deliver accurate pass",
+        "progress": 0
+      }
+    ]
+  },
+  {
+    "name": "Nutmeg",
+    "image": "nutmeg.png",
+    "description": "A technique where a player plays the ball through an opponent's legs.",
+    "mastered": false,
+    "criteria": [
+      {
+        "description": "Approach defender carefully",
+        "progress": 0
+      },
+      {
+        "description": "Pass ball between legs",
+        "progress": 0
+      },
+      {
+        "description": "Sprint past quickly",
+        "progress": 0
+      }
+    ]
+  },
+  {
+    "name": "Penalty Kick",
+    "image": "penaltykick",
+    "description": "A type of direct free kick taken from the penalty mark.",
+    "mastered": true,
+    "criteria": [
+      {
+        "description": "Place ball on penalty mark",
+        "progress": 0
+      },
+      {
+        "description": "Visualize shot placement",
+        "progress": 0
+      },
+      {
+        "description": "Strike with confidence",
+        "progress": 0
+      }
+    ]
+  },
+  {
+    "name": "Rainbow Kick",
+    "image": "rainbow_kick.png",
+    "description": "A trick where the ball is flicked up and over the player's head and the opponent.",
+    "mastered": false,
+    "criteria": [
+      {
+        "description": "Position foot behind the ball",
+        "progress": 0
+      },
+      {
+        "description": "Flick ball up and over",
+        "progress": 0
+      },
+      {
+        "description": "Follow through with control",
+        "progress": 0
+      }
+    ]
+  },
+  {
+    "name": "Shooting",
+    "image": "shooting.png",
+    "description": "The act of kicking the ball towards the goal in an attempt to score.",
+    "mastered": true,
+    "criteria": [
+      {
+        "description": "Aim for goal",
+        "progress": 0
+      },
+      {
+        "description": "Strike ball with power",
+        "progress": 0
+      },
+      {
+        "description": "Follow through properly",
+        "progress": 0
+      }
+    ]
+  },
+  {
+    "name": "Tackle",
+    "image": "tackle",
+    "description": "A skill used to take the ball away from an opponent.",
+    "mastered": true,
+    "criteria": [
+      {
+        "description": "Approach opponent carefully",
+        "progress": 0
+      },
+      {
+        "description": "Use correct tackling technique",
+        "progress": 0
+      },
+      {
+        "description": "Regain ball possession",
+        "progress": 0
+      }
+    ]
+  }
+]

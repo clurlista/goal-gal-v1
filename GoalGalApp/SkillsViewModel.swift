@@ -8,7 +8,7 @@ import Combine
 import SwiftUI
 
 class SkillsViewModel: ObservableObject {
-    private var service: SkillsService
+    var service: SkillsService
     @Published var skills: [SkillDetails] = []
     @Published var masteredSkills: [SkillDetails] = []
     

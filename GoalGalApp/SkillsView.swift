@@ -11,19 +11,22 @@ struct SkillsView: View {
     
     var body: some View {
         NavigationView {
-        ScrollView {
-            VStack(spacing: 10) {
-                ForEach(viewModel.skills, id: \.self) { skill in
-                    NavigationLink {
-                        DetailView(skill: skill, viewModel: viewModel)
-                    } label: {
-                        SkillSummaryView(skill: skill, viewModel: viewModel)
+            ScrollView {
+                VStack(spacing: 10) {
+                    ForEach(viewModel.skills, id: \.self) { skill in
+                        NavigationLink(
+                            destination: SkillCriteriaView(
+                                viewModel: SkillDetailViewModel(skill: skill, service: viewModel.service)
+                            )
+                        ) {
+                            SkillSummaryView(skill: skill, viewModel: viewModel)
+                        }
+                        .padding(.horizontal)
                     }
-                    .padding(.horizontal)
+
+                    .padding()
                 }
-                .padding()
-            }
-            .toolbar {
+                .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Text("Skills")
                         .font(.custom("Digital Arcade Regular", size: 30))
