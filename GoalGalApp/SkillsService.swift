@@ -32,4 +32,14 @@ class SkillsService: ObservableObject {
             print("Skill not found.")
         }
     }
+    
+    func updateSkill(_ updatedSkill: SkillDetails) {
+        if let index = skills.firstIndex(where: { $0.name == updatedSkill.name }) {
+            skills[index] = updatedSkill
+            print("Updated full skill for \(updatedSkill.name)")
+        } else {
+            print("Skill not found.")
+        }
+    }
+    
 }
